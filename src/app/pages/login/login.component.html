@@ -1,0 +1,136 @@
+
+<div class="login-page">
+
+  <div class="login-card">
+
+    <!-- Panel izquierdo con imagen -->
+    <section class="login-imagen">
+
+      <div class="imagen-contenido">
+        <div class="hotel-icono">🏨</div>
+
+        <h1>Hotel Costa 21</h1>
+
+        <p class="hotel-subtitulo">
+          Sistema de Gestión Hotelera
+        </p>
+
+        <div class="linea"></div>
+
+        <h2>Bienvenido</h2>
+
+        <p class="hotel-descripcion">
+          Administra tus habitaciones, huéspedes y reservas
+          desde un solo lugar.
+        </p>
+      </div>
+
+      <div class="imagen-pie">
+        Hotel Costa 21 · Perú
+      </div>
+
+    </section>
+
+    <!-- Panel derecho con formulario -->
+    <section class="login-formulario">
+
+      <div class="formulario-contenido">
+
+        <div class="encabezado">
+          <span class="etiqueta">ACCESO AL SISTEMA</span>
+
+          <h2>Iniciar sesión</h2>
+
+          <p>
+            Ingresa tus datos para acceder al panel
+            de administración.
+          </p>
+        </div>
+
+        <form [formGroup]="formulario" (ngSubmit)="ingresar()">
+
+          <!-- Correo electrónico -->
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+
+            <input
+              id="correo"
+              type="email"
+              formControlName="correo"
+              placeholder="ejemplo@correo.com"
+              autocomplete="username"
+            />
+
+            <small
+              class="mensaje-error"
+              *ngIf="(enviado || formulario.controls.correo.touched)
+                && formulario.controls.correo.hasError('required')">
+              El correo electrónico es obligatorio.
+            </small>
+
+            <small
+              class="mensaje-error"
+              *ngIf="(enviado || formulario.controls.correo.touched)
+                && formulario.controls.correo.hasError('email')">
+              Ingresa un correo electrónico válido.
+            </small>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="campo">
+            <label for="contrasena">Contraseña</label>
+
+            <div class="campo-contrasena">
+
+              <input
+                id="contrasena"
+                [type]="mostrarContrasena ? 'text' : 'password'"
+                formControlName="contrasena"
+                placeholder="Ingresa tu contraseña"
+                autocomplete="current-password"
+              />
+
+              <button
+                type="button"
+                class="btn-ver"
+                (click)="cambiarVisibilidad()">
+                {{ mostrarContrasena ? 'Ocultar' : 'Ver' }}
+              </button>
+
+            </div>
+
+            <small
+              class="mensaje-error"
+              *ngIf="(enviado || formulario.controls.contrasena.touched)
+                && formulario.controls.contrasena.hasError('required')">
+              La contraseña es obligatoria.
+            </small>
+          </div>
+
+          <!-- Mensaje de credenciales incorrectas -->
+          <div class="alerta-error" *ngIf="error">
+            {{ error }}
+          </div>
+
+          <button type="submit" class="btn-ingresar">
+            Ingresar al sistema
+          </button>
+
+        </form>
+
+        <div class="nota-acceso">
+          <span>🔒</span>
+          Acceso de demostración académica
+        </div>
+
+      </div>
+
+      <p class="pie-formulario">
+        © 2026 Hotel Costa 21
+      </p>
+
+    </section>
+
+  </div>
+
+</div>

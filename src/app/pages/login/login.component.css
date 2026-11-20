@@ -1,0 +1,257 @@
+
+/* Pantalla principal */
+.login-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      rgba(15, 35, 55, 0.45),
+      rgba(15, 35, 55, 0.65)
+    ),
+    url('/images/fondo-login.jpg') center / cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Tarjeta del login */
+.login-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 950px;
+  min-height: 530px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(20, 43, 64, 0.15);
+}
+
+/* Panel izquierdo */
+.login-imagen {
+  background:
+    linear-gradient(
+      rgba(15, 35, 55, 0.55),
+      rgba(15, 35, 55, 0.9)
+    ),
+    url('/images/hotel-login.jpg') center / cover no-repeat;
+
+  background-color: #142b40;
+  color: #ffffff;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-icono {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.imagen-contenido h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.hotel-subtitulo {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.linea {
+  width: 65px;
+  height: 3px;
+  background: #e4bd83;
+  margin: 35px 0 25px;
+  border-radius: 5px;
+}
+
+.imagen-contenido h2 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.hotel-descripcion {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #e2e8f0;
+  max-width: 310px;
+}
+
+.imagen-pie {
+  font-size: 12px;
+  color: #d0dce7;
+}
+
+/* Panel derecho */
+.login-formulario {
+  padding: 45px 50px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formulario-contenido {
+  margin: auto 0;
+}
+
+.etiqueta {
+  font-size: 11px;
+  font-weight: 700;
+  color: #9a7745;
+  letter-spacing: 1.5px;
+}
+
+.encabezado h2 {
+  font-size: 28px;
+  color: #142b40;
+  margin: 12px 0;
+}
+
+.encabezado p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Campos */
+.campo {
+  margin-bottom: 22px;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 9px;
+}
+
+.campo input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #1e293b;
+  transition: border-color 0.2s;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.campo-contrasena {
+  position: relative;
+}
+
+.campo-contrasena input {
+  padding-right: 75px;
+}
+
+.btn-ver {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Validaciones */
+.mensaje-error {
+  display: block;
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.alerta-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+/* Botón principal */
+.btn-ingresar {
+  width: 100%;
+  padding: 14px;
+  background: #142b40;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-ingresar:hover {
+  background: #234b68;
+}
+
+.nota-acceso {
+  margin-top: 25px;
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.nota-acceso span {
+  margin-right: 5px;
+}
+
+.pie-formulario {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 750px) {
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-card {
+    grid-template-columns: 1fr;
+  }
+
+  .login-imagen {
+    min-height: 230px;
+    padding: 30px;
+    gap: 25px;
+  }
+
+  .imagen-contenido h1 {
+    font-size: 26px;
+  }
+
+  .linea {
+    margin: 20px 0;
+  }
+
+  .login-formulario {
+    padding: 35px 25px 20px;
+  }
+}
